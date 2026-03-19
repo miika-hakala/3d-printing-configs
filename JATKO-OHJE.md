@@ -2,7 +2,7 @@
 
 ## Tila 19.3.2026
 
-### AKTIIVINEN ONGELMA: Voron Switchwire USB-yhteys
+### RATKAISTU: Voron Switchwire USB-yhteys (19.3.2026)
 SKR Mini E3 V2.0 ei näy /dev/serial/by-id/ vaikka:
 - Firmware flashattu onnistuneesti (FIRMWARE.CUR SD-kortilla)
 - Communication interface vaihdettu USB:ksi menuconfig:ssa
@@ -31,7 +31,9 @@ SSH: ssh miika@switchwire-1.local
 - IP: 192.168.0.190
 - SSH: ssh miika@switchwire-1.local
 - Klipper v0.13.0 asennettu, Moonraker toimii
-- MCU ei yhteydessä (USB-ongelma)
+- MCU yhteydessä ✅ (USB-ongelma ratkaistu 19.3.2026)
+- Firmware: Klipper v0.13.0, SKR Mini E3 V2.0
+- Ratkaisu: !PA14 GPIO pin menuconfig:ssa + firmware käännetty paikallisesti
 - printer.cfg tallessa: switchwire/printer.cfg
 
 ### Ender 3 V3 SE - TOIMII
