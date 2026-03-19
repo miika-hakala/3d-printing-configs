@@ -25,6 +25,7 @@ SSH: ssh miika@switchwire-1.local
 - MCU yhteydessä ✅ (USB-ongelma ratkaistu 19.3.2026)
 - Klipper v0.13.0, kaikki päivitykset ajan tasalla
 - Mainsail: http://192.168.0.190
+- Sensorless homing Y-akseli kalibroitu (SGTHRS: 70)
 - printer.cfg tallessa: switchwire/printer.cfg
 
 ### Ender 3 V3 SE - TOIMII
