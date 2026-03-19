@@ -3,18 +3,10 @@
 ## Tila 19.3.2026
 
 ### RATKAISTU: Voron Switchwire USB-yhteys (19.3.2026)
-SKR Mini E3 V2.0 ei näy /dev/serial/by-id/ vaikka:
-- Firmware flashattu onnistuneesti (FIRMWARE.CUR SD-kortilla)
-- Communication interface vaihdettu USB:ksi menuconfig:ssa
-- Pi Zero saa virran omasta virtalähteestä (PWR IN)
-- USB-kaapeli Pi Zero USB-portissa -> SKR Mini micro USB -portissa
-- lsusb näyttää vain: Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-
-Seuraavaksi kokeile:
-1. Toinen USB-kaapeli (data-kaapeli, ei pelkkä latauri)
-2. Tarkista SKR Minin micro USB -portti fyysisesti
-3. Kokeile kytkeä SKR Mini suoraan tietokoneeseen ja tarkista näkyykö se siellä
-4. Tarkista onko SKR Minissä jumppereita jotka valitsevat USB/UART
+- Ongelma: SKR Mini E3 V2.0 ei näkynyt USB:ssä
+- Ratkaisu: !PA14 GPIO pin puuttui menuconfig:sta (V2.0 eri kuin V1.2)
+- Firmware käännetty paikallisesti oikeilla asetuksilla ja kopioitu SD-kortille
+- Klipper v0.13.0 toimii, kaikki komponentit UP-TO-DATE
 
 Switchwire IP: 192.168.0.190
 SSH: ssh miika@switchwire-1.local
@@ -27,13 +19,12 @@ SSH: ssh miika@switchwire-1.local
 - Input shaper: mzv, 60Hz (manuaalinen, ei mitattu)
 - Kalibroimatta: SGTHRS sensorless homing
 
-### Voron Switchwire - OSITTAIN TOIMII
+### Voron Switchwire - TOIMII ✅
 - IP: 192.168.0.190
 - SSH: ssh miika@switchwire-1.local
-- Klipper v0.13.0 asennettu, Moonraker toimii
 - MCU yhteydessä ✅ (USB-ongelma ratkaistu 19.3.2026)
-- Firmware: Klipper v0.13.0, SKR Mini E3 V2.0
-- Ratkaisu: !PA14 GPIO pin menuconfig:ssa + firmware käännetty paikallisesti
+- Klipper v0.13.0, kaikki päivitykset ajan tasalla
+- Mainsail: http://192.168.0.190
 - printer.cfg tallessa: switchwire/printer.cfg
 
 ### Ender 3 V3 SE - TOIMII
@@ -55,7 +46,7 @@ https://github.com/miika-hakala/3d-printing-configs
 - Onshape (PIB CAD)
 - Elegoo Neptune 2S (pib-osat)
 - Voron 0.1 (pib-osat)
-- Voron Switchwire (pib-osat, kun saadaan toimimaan)
+- Voron Switchwire (pib-osat)
 
 ## Tärkeät linkit
 - PIB STL: https://github.com/pib-rocks/pib-stls/archive/refs/tags/V4.0.2.zip
