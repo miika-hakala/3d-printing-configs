@@ -1,5 +1,11 @@
 # Voron Switchwire Ongelmat ja Ratkaisut
 
+## TMC2209 stepper-driveri jumittuu virran katketessa (RATKAISTU)
+- Oireet: Z-akseli putoaa hallitsemattomasti alas homingissa, moottorit pitävät outoa ääntä
+- Syy: Virta katkesi kesken tulostuksen, TMC2209-driverit jäivät virhetilaan
+- Ratkaisu: Katkaise KAIKKI virrat (24V + Pi), odota 60 sekuntia, käynnistä uudelleen
+- Huom: Pelkkä FIRMWARE_RESTART tai Klipper-restart ei riitä
+
 ## USB-yhteysongelma (RATKAISEMATTA)
 - SKR Mini E3 V2.0 ei näy /dev/serial/by-id/
 - Firmware flashattu onnistuneesti (FIRMWARE.CUR näkyy SD-kortilla)
